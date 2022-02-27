@@ -18,6 +18,7 @@ while True:
         desc = join(baseURL, code, "done", allFiles[0])
         print(file)
         print(desc)
-    #os.startfile(file, "print")
+        #os.startfile(file, "print")
+        shutil.move(file,desc)
     else:
         print("no files to print")
