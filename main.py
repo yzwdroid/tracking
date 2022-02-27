@@ -11,7 +11,9 @@ while True:
     folder = join(baseURL, code)
     donePath = join(folder, "done")
     Path(donePath).mkdir(parents=True, exist_ok=True)
-    allFiles = [f for f in listdir(folder) if isfile(join(folder, f))]
+    allFiles = [f for f in listdir(folder) if isfile(join(folder, f)) and
+                f.startswith(code[0])]
+    print(allFiles)
 
     if allFiles:
         file = join(baseURL, code, allFiles[0])
