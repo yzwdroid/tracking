@@ -19,10 +19,8 @@ while True:
 
     if allFiles:
         file = join(baseURL, code, allFiles[0])
-        desc = join(baseURL, code, "done", allFiles[0])
-        print(file)
-        print(desc)
-        os.startfile(file, "print")
-        shutil.move(file,desc)
+        dest = join(baseURL, code, "done", allFiles[0])
+        shutil.move(file,dest)
+        os.startfile(dest, "print")
     else:
         print("no files to print")
